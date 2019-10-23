@@ -46,10 +46,6 @@ video {
   border-radius: 4px;
 }
 
-video::-webkit-media-controls {
-  display:none !important;
-}
-
 .video-controls {
   right: 0;
   left: 0;
@@ -57,7 +53,7 @@ video::-webkit-media-controls {
   position: absolute;
   bottom: 0;
   transition: all 0.2s ease;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
 }
 
 .video-controls.hide {
@@ -167,10 +163,6 @@ button * {
   pointer-events: none;
 }
 
-button:hover::before {
-  display: inline-block;
-}
-
 button::before {
   content: attr(data-title);
   position: absolute;
@@ -183,6 +175,10 @@ button::before {
   padding: 4px 6px;
   word-break: keep-all;
   white-space: pre;
+}
+
+button:hover::before {
+  display: inline-block;
 }
 
 .fullscreen-button {

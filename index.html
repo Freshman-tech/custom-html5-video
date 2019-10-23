@@ -17,15 +17,15 @@
         </svg>
       </div>
 
-      <video class="video" id="video" preload="metadata" poster="poster.jpg">
+      <video controls class="video" id="video" preload="metadata" poster="poster.jpg">
         <source src="video.mp4" type="video/mp4"></source>
       </video>
 
-      <div class="video-controls" id="video-controls">
+      <div class="video-controls hidden" id="video-controls">
         <div class="video-progress">
-          <progress id="progress-bar" value="0"></progress>
+          <progress id="progress-bar" value="0" min="0"></progress>
           <input class="seek" id="seek" value="0" min="0" type="range" step="1">
-          <div class="seek-tooltip" id="seek-tooltip">0:00</div>
+          <div class="seek-tooltip" id="seek-tooltip">00:00</div>
         </div>
 
         <div class="bottom-controls">
@@ -51,9 +51,9 @@
             </div>
 
             <div class="time">
-              <time id="current-time">00:00</time>
+              <time id="time-elapsed">00:00</time>
               <span> / </span>
-              <time id="total-time">00:00</time>
+              <time id="duration">00:00</time>
             </div>
           </div>
 
