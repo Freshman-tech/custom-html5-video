@@ -103,7 +103,9 @@ function updateSeekTooltip(event) {
 // skipAhead jumps to a different point in the video when the progress bar
 // is clicked
 function skipAhead(event) {
-  const skipTo = event.target.dataset.seek;
+  const skipTo = event.target.dataset.seek
+    ? event.target.dataset.seek
+    : event.target.value;
   video.currentTime = skipTo;
   progressBar.value = skipTo;
   seek.value = skipTo;
