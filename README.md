@@ -1,4 +1,4 @@
-# Custom HTML5 Video
+# Custom Video On HTML5
 
 Build a custom HTML5 video player with JavaScript. Features:
 
