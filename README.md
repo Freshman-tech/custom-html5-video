@@ -1,4 +1,4 @@
-# Custom HTML5 Video
+# Custom HTML5 Video.
 
 Build a custom HTML5 video player with JavaScript. Features:
 
@@ -10,18 +10,18 @@ Build a custom HTML5 video player with JavaScript. Features:
 
 Tutorial: https://freshman.tech/custom-html5-video/
 
-## Live demo
+## Live demo.
 
 This project is live at http://custom-html5-video.surge.sh/
 
-## Prerequisites
+## Prerequisites.
 
 You must have Node.js and npm installed on your machine. This project was built against the following versions:
 
 - Node v12.6.0
 - npm v6.9.0
 
-## Setup
+## Setup.
 
 - Clone this repo to your machine
 - `cd` into the project folder and run `npm install`
