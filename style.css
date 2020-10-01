@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #Custom HTML5 Video Player
+                    #Custom HTML5 Video Player
    ========================================================================== */
 
 :root {
@@ -290,9 +290,9 @@ input[type=range].volume::-moz-range-thumb {
 }
 
 svg {
-  width: 28px;
-  height: 28px;
-  fill: #fff;
+       width: 28px;
+     height: 28px;
+   fill: #fff;
   stroke: #fff;
-  cursor: pointer;
+ cursor: pointer;
 }
