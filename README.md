@@ -1,12 +1,13 @@
 # Custom HTML5 Video
 
-Build a custom HTML5 video player with JavaScript. Features:
+Build a custom HTML5 video player with JavaScript. 
+Features available :
 
-- Video and audio playback
-- Native fullscreen
-- Picture-in-Picture
-- Custom controls
-- Keyboard shortcuts
+-> Video and audio playback
+-> Native fullscreen
+-> Picture-in-Picture
+-> Custom controls
+-> Keyboard shortcuts
 
 Tutorial: https://freshman.tech/custom-html5-video/
 
