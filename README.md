@@ -26,3 +26,5 @@ You must have Node.js and npm installed on your machine. This project was built 
 - Clone this repo to your machine
 - `cd` into the project folder and run `npm install`
 - Run `npm start`
+
+## Happy coding
