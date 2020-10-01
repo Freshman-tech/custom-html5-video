@@ -20,7 +20,8 @@ You must have Node.js and npm installed on your machine. This project was built 
 
 - Node v12.6.0
 - npm v6.9.0
-
+-Node 14.13.0 
+-download here:---  https://nodejs.org/en/ 
 ## Setup
 
 - Clone this repo to your machine
