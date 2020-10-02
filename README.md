@@ -21,7 +21,7 @@ You must have Node.js and npm installed on your machine. This project was built 
 - Node v12.6.0
 - npm v6.9.0
 
-## Setup
+## Steps to setup
 
 - Clone this repo to your machine
 - `cd` into the project folder and run `npm install`
