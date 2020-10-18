@@ -269,11 +269,12 @@ input[type=range]::-moz-range-track {
 input[type=range]::-moz-range-thumb {
   height: 14px;
   width: 14px;
-  border-radius: 50px;
+  border-radius: 48px;
   border: 1px solid var(--youtube-red);
   background: var(--youtube-red);
   cursor: pointer;
   margin-top: 5px;
+  margin-left:5px;
 }
 
 input[type=range]:focus::-moz-range-track {
