@@ -18,11 +18,11 @@ const playbackAnimation = document.getElementById('playback-animation');
 const fullscreenButton = document.getElementById('fullscreen-button');
 const videoContainer = document.getElementById('video-container');
 const fullscreenIcons = fullscreenButton.querySelectorAll('use');
-const pipButton = document.getElementById('pip-button')
+const pipButton = document.getElementById('pip-button');
 
 const videoWorks = !!document.createElement('video').canPlayType;
 if (videoWorks) {
-  video.controls = false
+  video.controls = false;
   videoControls.classList.remove('hidden');
 }
 
@@ -42,12 +42,12 @@ function togglePlay() {
 // updatePlayButton updates the playback icon and tooltip
 // depending on the playback state
 function updatePlayButton() {
-  playbackIcons.forEach(icon => icon.classList.toggle('hidden'));
+  playbackIcons.forEach((icon) => icon.classList.toggle('hidden'));
 
   if (video.paused) {
-    playButton.setAttribute('data-title', 'Play (k)')
+    playButton.setAttribute('data-title', 'Play (k)');
   } else {
-    playButton.setAttribute('data-title', 'Pause (k)')
+    playButton.setAttribute('data-title', 'Pause (k)');
   }
 }
 
@@ -60,7 +60,7 @@ function formatTime(timeInSeconds) {
     minutes: result.substr(3, 2),
     seconds: result.substr(6, 2),
   };
-};
+}
 
 // initializeVideo sets the video duration, and maximum value of the
 // progressBar
@@ -70,7 +70,7 @@ function initializeVideo() {
   progressBar.setAttribute('max', videoDuration);
   const time = formatTime(videoDuration);
   duration.innerText = `${time.minutes}:${time.seconds}`;
-  duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`)
+  duration.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
 }
 
 // updateTimeElapsed indicates how far through the video
@@ -78,7 +78,7 @@ function initializeVideo() {
 function updateTimeElapsed() {
   const time = formatTime(Math.round(video.currentTime));
   timeElapsed.innerText = `${time.minutes}:${time.seconds}`;
-  timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`)
+  timeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`);
 }
 
 // updateProgress indicates how far through the video
@@ -92,8 +92,11 @@ function updateProgress() {
 // roughly work out what point in the video the user will skip to if
 // the progress bar is clicked at that point
 function updateSeekTooltip(event) {
-  const skipTo = Math.round((event.offsetX / event.target.clientWidth) * parseInt(event.target.getAttribute('max'), 10));
-  seek.setAttribute('data-seek', skipTo)
+  const skipTo = Math.round(
+    (event.offsetX / event.target.clientWidth) *
+      parseInt(event.target.getAttribute('max'), 10)
+  );
+  seek.setAttribute('data-seek', skipTo);
   const t = formatTime(skipTo);
   seekTooltip.textContent = `${t.minutes}:${t.seconds}`;
   const rect = video.getBoundingClientRect();
@@ -124,15 +127,15 @@ function updateVolume() {
 // updateVolumeIcon updates the volume icon so that it correctly reflects
 // the volume of the video
 function updateVolumeIcon() {
-  volumeIcons.forEach(icon => {
+  volumeIcons.forEach((icon) => {
     icon.classList.add('hidden');
   });
 
-  volumeButton.setAttribute('data-title', 'Mute (m)')
+  volumeButton.setAttribute('data-title', 'Mute (m)');
 
   if (video.muted || video.volume === 0) {
     volumeMute.classList.remove('hidden');
-    volumeButton.setAttribute('data-title', 'Unmute (m)')
+    volumeButton.setAttribute('data-title', 'Unmute (m)');
   } else if (video.volume > 0 && video.volume <= 0.5) {
     volumeLow.classList.remove('hidden');
   } else {
@@ -157,26 +160,35 @@ function toggleMute() {
 // animatePlayback displays an animation when
 // the video is played or paused
 function animatePlayback() {
-    playbackAnimation.animate([
+  playbackAnimation.animate(
+    [
       {
         opacity: 1,
-        transform: "scale(1)",
+        transform: 'scale(1)',
       },
       {
         opacity: 0,
-        transform: "scale(1.3)",
-      }
-    ], {
+        transform: 'scale(1.3)',
+      },
+    ],
+    {
       duration: 500,
-    });
+    }
+  );
 }
 
 // toggleFullScreen toggles the full screen state of the video
 // If the browser is currently in fullscreen mode,
-// then it must be exited and vice versa.
+// then it should exit and vice versa.
 function toggleFullScreen() {
   if (document.fullscreenElement) {
     document.exitFullscreen();
+  } else if (document.webkitFullscreenElement) {
+    // Need this to support Safari
+    document.webkitExitFullscreen();
+  } else if (videoContainer.webkitRequestFullscreen) {
+    // Need this to support Safari
+    videoContainer.webkitRequestFullscreen();
   } else {
     videoContainer.requestFullscreen();
   }
@@ -185,12 +197,12 @@ function toggleFullScreen() {
 // updateFullscreenButton changes the icon of the full screen button
 // and tooltip to reflect the current full screen state of the video
 function updateFullscreenButton() {
-  fullscreenIcons.forEach(icon => icon.classList.toggle('hidden'));
+  fullscreenIcons.forEach((icon) => icon.classList.toggle('hidden'));
 
   if (document.fullscreenElement) {
-    fullscreenButton.setAttribute('data-title', 'Exit full screen (f)')
+    fullscreenButton.setAttribute('data-title', 'Exit full screen (f)');
   } else {
-    fullscreenButton.setAttribute('data-title', 'Full screen (f)')
+    fullscreenButton.setAttribute('data-title', 'Full screen (f)');
   }
 }
 
@@ -204,7 +216,7 @@ async function togglePip() {
       await document.exitPictureInPicture();
     }
   } catch (error) {
-    console.error(error)
+    console.error(error);
   } finally {
     pipButton.disabled = false;
   }
@@ -229,7 +241,7 @@ function showControls() {
 // each supported shortcut key
 function keyboardShortcuts(event) {
   const { key } = event;
-  switch(key) {
+  switch (key) {
     case 'k':
       togglePlay();
       animatePlayback();
