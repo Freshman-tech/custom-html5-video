@@ -13,6 +13,6 @@
   "author": "Ayooluwa Isaiah <ayo@freshman.tech> (https://freshman.tech)",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.27.10"
   }
 }
